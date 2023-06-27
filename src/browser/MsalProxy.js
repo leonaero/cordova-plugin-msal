@@ -40,6 +40,7 @@ function signInSilent(success, error, opts) {
                 .then(resp => {
                     const account = {
                         token: resp.accessToken,
+                        idToken: resp.idToken,
                         account: {
                             id: resp.uniqueId,
                             username: resp.account.username,
@@ -97,6 +98,7 @@ function signInInteractive(success, error, opts) {
             .then(resp => {
                 const account = {
                     token: resp.accessToken,
+                    idToken: resp.idToken,
                     account: {
                         id: resp.uniqueId,
                         username: resp.account.username,
