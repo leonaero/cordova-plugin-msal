@@ -86,6 +86,7 @@ function signInInteractive(success, error, opts) {
     }
     loginRequest.prompt = prompt;
     loginRequest.extraQueryParameters = {};
+    loginRequest.nonce = (Math.random() + 1).toString(36).substring(2);
     authorizationQueryStringParameters.forEach(p => {
         loginRequest[p.param] = p.value;
     });
