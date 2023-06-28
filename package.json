@@ -12,7 +12,7 @@
     },
     "repository": {
       "type": "git",
-      "url": "git+https://github.com/wrobins/cordova-plugin-msal.git"
+      "url": "git+https://github.com/leonaero/cordova-plugin-msal.git"
     },
     "keywords": [
       "cordova",
@@ -39,8 +39,8 @@
     "author": "Walter Robins <wrobins@kent.edu>",
     "license": "Apache 2.0",
     "bugs": {
-      "url": "https://github.com/wrobins/cordova-plugin-msal/issues"
+      "url": "https://github.com/leonaero/cordova-plugin-msal/issues"
     },
     "types": "./index.d.ts",
-    "homepage": "https://github.com/wrobins/cordova-plugin-msal"
+    "homepage": "https://github.com/leonaero/cordova-plugin-msal"
 }
