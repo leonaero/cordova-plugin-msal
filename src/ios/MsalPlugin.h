@@ -7,6 +7,7 @@
 @property MSALPublicClientApplication *application;
 @property NSArray<NSString *> *scopes;
 @property NSString *clientId;
+@property NSString *nonce;
 @property NSString *tenantId;
 @property NSString *accountMode;
 @property BOOL isInit;

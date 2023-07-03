@@ -29,6 +29,9 @@
     if (![[options objectForKey:@"clientId"] isEqualToString:@""]) {
         self.clientId = [options objectForKey:@"clientId"];
     }
+    if (![[options objectForKey:@"nonce"] isEqualToString:@""]) {
+        self.nonce = [options objectForKey:@"nonce"];
+    }
     NSArray *authorities = [options objectForKey:@"authorities"];
     for (NSDictionary *a in authorities)
     {

@@ -19,6 +19,7 @@ module.exports = {
             webViewZoomEnabled: false,
             powerOptCheckForNetworkReqEnabled: true,
             clientId: '',
+            nonce: (Math.random() + 1).toString(36).substring(15),
             tenantId: 'common'
         }
         if (!options) {
@@ -64,6 +65,9 @@ module.exports = {
             }            
             if (typeof(options.clientId) == 'undefined') {
                 options.clientId = defaultOptions.clientId;
+            }            
+            if (typeof(options.nonce) == 'undefined') {
+                options.nonce = defaultOptions.nonce;
             }
             if (typeof(options.tenantId) == 'undefined') {
                 options.tenantId = defaultOptions.tenantId;

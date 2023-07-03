@@ -50,6 +50,7 @@ public class MsalPlugin extends CordovaPlugin {
     private boolean isInit = false;
 
     private String clientId;
+    private String nonce;
     private String tenantId;
     private String keyHash;
     private String accountMode;
@@ -184,6 +185,9 @@ public class MsalPlugin extends CordovaPlugin {
                         if (!"".equals(options.optString("clientId"))) {
                             MsalPlugin.this.clientId = options.getString("clientId");
                         }
+                        if (!"".equals(options.optString("nonce"))) {
+                            MsalPlugin.this.nonce = options.getString("nonce");
+                        }
                         JSONArray authoritiesList = options.getJSONArray("authorities");
                         for (int i = 0; i < authoritiesList.length(); ++i) {
                             JSONObject authority = authoritiesList.getJSONObject(i);
@@ -211,6 +215,7 @@ public class MsalPlugin extends CordovaPlugin {
                                 "    \"web_view_zoom_controls_enabled\": " + options.optBoolean("webViewZoomControlsEnabled", true) + ",\n" +
                                 "    \"web_view_zoom_enabled\" : " + options.optBoolean("webViewZoomEnabled", true) + ",\n" +
                                 "    \"client_id\" : \"" + MsalPlugin.this.clientId + "\",\n" +
+                                "    \"nonce\" : \"" + MsalPlugin.this.nonce + "\",\n" +
                                 "    \"account_mode\": \"" + options.getString("accountMode") + "\",\n" +
                                 "    \"authorization_user_agent\" : \"" + options.getString("authorizationUserAgent") + "\",\n" +
                                 "    \"redirect_uri\" : \"msauth://" + MsalPlugin.this.activity.getApplicationContext().getPackageName() + "/" + keyHashUrlFriendly + "\",\n" +
