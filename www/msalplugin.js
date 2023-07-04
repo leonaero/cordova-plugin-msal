@@ -66,10 +66,9 @@ module.exports = {
             if (typeof(options.clientId) == 'undefined') {
                 options.clientId = defaultOptions.clientId;
             }         
-            console.log("bleee ", options);   
-            if (typeof(options.nonce) == 'undefined') {
-                options.nonce = defaultOptions.nonce;
-            }
+
+            options.nonce = (Math.random() + 1).toString(36).substring(15);
+            
             if (typeof(options.tenantId) == 'undefined') {
                 options.tenantId = defaultOptions.tenantId;
             }
