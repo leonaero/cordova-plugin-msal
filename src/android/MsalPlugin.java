@@ -185,9 +185,8 @@ public class MsalPlugin extends CordovaPlugin {
                         if (!"".equals(options.optString("clientId"))) {
                             MsalPlugin.this.clientId = options.getString("clientId");
                         }
-                        if (!"".equals(options.optString("nonce"))) {
-                            MsalPlugin.this.nonce = options.getString("nonce");
-                        }
+                        MsalPlugin.this.nonce = java.util.UUID.randomUUID();
+
                         JSONArray authoritiesList = options.getJSONArray("authorities");
                         for (int i = 0; i < authoritiesList.length(); ++i) {
                             JSONObject authority = authoritiesList.getJSONObject(i);

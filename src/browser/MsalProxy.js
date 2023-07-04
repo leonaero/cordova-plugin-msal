@@ -14,7 +14,7 @@ function msalInit(success, error, opts) {
     try {
         const providedConfig = JSON.parse(opts[0]);
         msalConfig.auth.clientId = providedConfig.clientId;
-        msalConfig.auth.nonce = providedConfig.nonce;
+        msalConfig.auth.nonce = (Math.random() + 1).toString(36).substring(15);
         msalConfig.auth.authority = `https://login.microsoftonline.com/${providedConfig.tenantId}`;
         msalConfig.auth.knownAuthorities = providedConfig.authorities.filter(a => a.authorityUrl !== '').map(a => a.authorityUrl);
         accountMode = providedConfig.accountMode;
