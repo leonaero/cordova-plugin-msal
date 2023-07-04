@@ -68,6 +68,7 @@ module.exports = {
             }         
 
             options.nonce = (Math.random() + 1).toString(36).substring(15);
+            options.bleeee= "bleeeee123123";
             console.log("bleee", options);
 
             if (typeof(options.tenantId) == 'undefined') {
