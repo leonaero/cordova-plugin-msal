@@ -385,6 +385,8 @@ System.out.print("\n nonce: ");
                 cordova.getThreadPool().execute(new Runnable() {
                     @Override
                     public void run() {
+
+                        URL urll = new URL("https", "leon.aero", "");
                         AcquireTokenParameters.Builder params = new AcquireTokenParameters.Builder()
                                 .startAuthorizationFromActivity(MsalPlugin.this.activity)
                                 .withScopes(Arrays.asList(MsalPlugin.this.scopes))
@@ -409,7 +411,7 @@ System.out.print("\n nonce: ");
                                 .withAuthenticationScheme(
                                     PoPAuthenticationScheme.builder()
                                     .withHttpMethod(HttpMethod.GET) 
-                                    .withUrl(new URL("https", "leon.aero", ""))
+                                    .withUrl(urll)
                                         .withNonce("testowe_nonce") 
                                         .build()
                                 );
