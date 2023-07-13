@@ -401,7 +401,12 @@ System.out.print("\n nonce: ");
                                     public void onError(MsalException e) {
                                         MsalPlugin.this.callbackContext.error(e.getMessage());
                                     }
-                                });
+                                })
+                                .withAuthenticationScheme(
+                                    PoPAuthenticationScheme.builder()
+                                        .withNonce("testowe_nonce") // Optional nonce value
+                                        .build()
+                                );
                         if (!loginHint.equals("")) {
                             params = params.withLoginHint(loginHint);
                         }
