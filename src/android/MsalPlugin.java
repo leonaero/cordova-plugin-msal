@@ -24,6 +24,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.net.URL;
+
 
 import com.microsoft.identity.client.PoPAuthenticationScheme;
 import com.microsoft.identity.client.HttpMethod;
@@ -407,7 +409,7 @@ System.out.print("\n nonce: ");
                                 .withAuthenticationScheme(
                                     PoPAuthenticationScheme.builder()
                                     .withHttpMethod(HttpMethod.GET) 
-                                    .withUrl("msauth://" + MsalPlugin.this.activity.getApplicationContext().getPackageName() + "/" + URLEncoder.encode(MsalPlugin.this.keyHash, "UTF-8"))
+                                    .withUrl(new URL("msauth://" + MsalPlugin.this.activity.getApplicationContext().getPackageName() + "/" + URLEncoder.encode(MsalPlugin.this.keyHash, "UTF-8")))
                                         .withNonce("testowe_nonce") 
                                         .build()
                                 );
