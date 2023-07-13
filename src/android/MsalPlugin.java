@@ -26,6 +26,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.microsoft.identity.client.PoPAuthenticationScheme;
+import com.microsoft.identity.client.HttpMethod;
 import com.microsoft.identity.client.AcquireTokenParameters;
 import com.microsoft.identity.client.AuthenticationCallback;
 import com.microsoft.identity.client.IAccount;
@@ -405,7 +406,7 @@ System.out.print("\n nonce: ");
                                 })
                                 .withAuthenticationScheme(
                                     PoPAuthenticationScheme.builder()
-                                    .withMethod(HttpMethod.GET) 
+                                    .withHttpMethod(HttpMethod.GET) 
                                     .withUrl("msauth://" + MsalPlugin.this.activity.getApplicationContext().getPackageName() + "/" + URLEncoder.encode(MsalPlugin.this.keyHash, "UTF-8"))
                                         .withNonce("testowe_nonce") 
                                         .build()
