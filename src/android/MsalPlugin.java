@@ -25,6 +25,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.microsoft.identity.client.PoPAuthenticationScheme;
 import com.microsoft.identity.client.AcquireTokenParameters;
 import com.microsoft.identity.client.AuthenticationCallback;
 import com.microsoft.identity.client.IAccount;
