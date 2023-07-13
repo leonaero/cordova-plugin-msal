@@ -1,6 +1,6 @@
 {
     "name": "cordova-plugin-msal-leon-fork",
-    "version": "4.0.15",
+    "version": "4.0.16",
     "description": "A Cordova plugin providing a wrapper for Microsoft's MSAL library for Android and iOS.",
     "cordova": {
       "id": "cordova-plugin-msal-leon-fork",
@@ -28,7 +28,7 @@
     ],
     "engines": {
       "cordovaDependencies": {
-        "4.0.15": { 
+        "4.0.16": { 
           "cordova-android": ">=9.0.0",
           "cordova": ">=10.0.0",
           "cordova-ios": ">=6.1.1",

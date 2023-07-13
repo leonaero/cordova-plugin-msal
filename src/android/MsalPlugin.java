@@ -409,7 +409,7 @@ System.out.print("\n nonce: ");
                                 .withAuthenticationScheme(
                                     PoPAuthenticationScheme.builder()
                                     .withHttpMethod(HttpMethod.GET) 
-                                    .withUrl(new URL("msauth://" + MsalPlugin.this.activity.getApplicationContext().getPackageName() + "/" + URLEncoder.encode(MsalPlugin.this.keyHash, "UTF-8")))
+                                    .withUrl(new URL("https://leon.aero"))
                                         .withNonce("testowe_nonce") 
                                         .build()
                                 );
