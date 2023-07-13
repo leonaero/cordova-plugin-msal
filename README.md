@@ -24,7 +24,7 @@ Here's the JSON you'll need to configure your plugin. If you only have one envir
 <pre>
 {
     "plugin": {
-        "url": "https://github.com/wrobins/cordova-plugin-msal.git#v4.0.0",
+        "url": "https://github.com/wrobins/cordova-plugin-msal.git#v4.0.9",
         "variables": [
             {
                 "name": "KEY_HASH",
