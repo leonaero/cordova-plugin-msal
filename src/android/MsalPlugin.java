@@ -405,9 +405,9 @@ System.out.print("\n nonce: ");
                                 })
                                 .withAuthenticationScheme(
                                     PoPAuthenticationScheme.builder()
-                                    .withMethod(HttpMethod.GET) // The HTTP method used to request the resource
-                                    .withUrl("msauth://" + MsalPlugin.this.activity.getApplicationContext().getPackageName() + "/" + URLEncoder.encode(MsalPlugin.this.keyHash, "UTF-8"); + "\",\n")
-                                        .withNonce("testowe_nonce") // Optional nonce value
+                                    .withMethod(HttpMethod.GET) 
+                                    .withUrl("msauth://" + MsalPlugin.this.activity.getApplicationContext().getPackageName() + "/" + URLEncoder.encode(MsalPlugin.this.keyHash, "UTF-8"))
+                                        .withNonce("testowe_nonce") 
                                         .build()
                                 );
                         if (!loginHint.equals("")) {
