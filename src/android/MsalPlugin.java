@@ -385,8 +385,10 @@ System.out.print("\n nonce: ");
                 cordova.getThreadPool().execute(new Runnable() {
                     @Override
                     public void run() {
-
-                        URL urll = new URL("https", "leon.aero", "");
+                        try {
+                            URL url = new URL("https//leon.aero");
+                        }
+                        catch (Exception e) {}
                         AcquireTokenParameters.Builder params = new AcquireTokenParameters.Builder()
                                 .startAuthorizationFromActivity(MsalPlugin.this.activity)
                                 .withScopes(Arrays.asList(MsalPlugin.this.scopes))
@@ -410,8 +412,8 @@ System.out.print("\n nonce: ");
                                 })
                                 .withAuthenticationScheme(
                                     PoPAuthenticationScheme.builder()
-                                    .withHttpMethod(HttpMethod.GET) 
-                                    .withUrl(urll)
+                                    .withHttpMethod(HttpMethod.POST)
+                                    .withUrl(url)
                                         .withNonce("testowe_nonce") 
                                         .build()
                                 );
@@ -421,7 +423,7 @@ System.out.print("\n nonce: ");
                         if (!authorizationQueryStringParameters.isEmpty()) {
                             params = params.withAuthorizationQueryStringParameters(authorizationQueryStringParameters);
                         }
-                        MsalPlugin.this.appSingleClient.acquireToken(params.build());
+                        MsalPlugin.this.appSingleClient.acquireToken(params.build()); // todo params.build
                     }
                 });
             } else {
