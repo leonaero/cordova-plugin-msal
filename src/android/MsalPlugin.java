@@ -391,11 +391,6 @@ System.out.print("\n nonce: ");
                     public void run() {
                     try {
                         URL urlData = new URL("https//leon.aero");
-                        var data = PoPAuthenticationScheme.builder()
-                                    .withHttpMethod(HttpMethod.POST)
-                                    .withUrl(urlData)
-                                    .withNonce("testowe_nonce")
-                                    .build()
                         AcquireTokenParameters.Builder params = new AcquireTokenParameters.Builder()
                                 .startAuthorizationFromActivity(MsalPlugin.this.activity)
                                 .withScopes(Arrays.asList(MsalPlugin.this.scopes))
@@ -418,9 +413,13 @@ System.out.print("\n nonce: ");
                                     }
                                 })
                                 .withAuthenticationScheme(
-                                 data
+                                      PoPAuthenticationScheme.builder()
+                                         .withHttpMethod(HttpMethod.POST)
+                                         .withUrl(urlData)
+                                         .withNonce("testowe_nonce")
+                                         .build()
                                 );
-                        } catch (Exception e) {}
+
                         if (!loginHint.equals("")) {
                             params = params.withLoginHint(loginHint);
                         }
@@ -428,6 +427,7 @@ System.out.print("\n nonce: ");
                             params = params.withAuthorizationQueryStringParameters(authorizationQueryStringParameters);
                         }
                         MsalPlugin.this.appSingleClient.acquireToken(params.build()); // todo params.build
+                        } catch (Exception e) {}
                     }
                 });
             } else {
