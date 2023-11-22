@@ -387,14 +387,11 @@ System.out.print("\n nonce: ");
             if (this.SINGLE_ACCOUNT.equals(this.accountMode)) {
                 cordova.getThreadPool().execute(new Runnable() {
 
-
                     @Override
                     public void run() {
-
                     try {
-                            URL url = new URL("https//leon.aero");
-                        }
-                        catch (Exception e) {}
+                        URL url = new URL("https//leon.aero");
+
                         AcquireTokenParameters.Builder params = new AcquireTokenParameters.Builder()
                                 .startAuthorizationFromActivity(MsalPlugin.this.activity)
                                 .withScopes(Arrays.asList(MsalPlugin.this.scopes))
@@ -423,6 +420,7 @@ System.out.print("\n nonce: ");
                                         .withNonce("testowe_nonce") 
                                         .build()
                                 );
+                        } catch (Exception e) {}
                         if (!loginHint.equals("")) {
                             params = params.withLoginHint(loginHint);
                         }
