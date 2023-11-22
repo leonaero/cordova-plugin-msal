@@ -390,8 +390,12 @@ System.out.print("\n nonce: ");
                     @Override
                     public void run() {
                     try {
-                        URL url = new URL("https//leon.aero");
-
+                        URL urlData = new URL("https//leon.aero");
+                        var data = PoPAuthenticationScheme.builder()
+                                    .withHttpMethod(HttpMethod.POST)
+                                    .withUrl(urlData)
+                                    .withNonce("testowe_nonce")
+                                    .build()
                         AcquireTokenParameters.Builder params = new AcquireTokenParameters.Builder()
                                 .startAuthorizationFromActivity(MsalPlugin.this.activity)
                                 .withScopes(Arrays.asList(MsalPlugin.this.scopes))
@@ -414,11 +418,7 @@ System.out.print("\n nonce: ");
                                     }
                                 })
                                 .withAuthenticationScheme(
-                                    PoPAuthenticationScheme.builder()
-                                    .withHttpMethod(HttpMethod.POST)
-                                    .withUrl(url)
-                                        .withNonce("testowe_nonce") 
-                                        .build()
+                                 data
                                 );
                         } catch (Exception e) {}
                         if (!loginHint.equals("")) {
