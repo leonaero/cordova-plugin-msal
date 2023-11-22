@@ -380,12 +380,18 @@ System.out.print("\n nonce: ");
     }
 
     private void signinUserInteractive(final String loginHint, final List<Map.Entry<String, String>> authorizationQueryStringParameters, final Prompt prompt, final String[] otherScopesToAuthorize) {
+
+
+
         if (this.checkConfigInit()) {
             if (this.SINGLE_ACCOUNT.equals(this.accountMode)) {
                 cordova.getThreadPool().execute(new Runnable() {
+
+
                     @Override
                     public void run() {
-                        try {
+
+                    try {
                             URL url = new URL("https//leon.aero");
                         }
                         catch (Exception e) {}
