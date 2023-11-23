@@ -414,8 +414,6 @@ System.out.print("\n nonce: ");
                                 })
                                 .withAuthenticationScheme(
                                       PoPAuthenticationScheme.builder()
-                                         .withHttpMethod(HttpMethod.POST)
-                                         .withUrl(urlData)
                                          .withNonce("testowe_nonce")
                                          .build()
                                 );
